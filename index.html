@@ -16,6 +16,7 @@
         <div class="buttons">
             <button onclick=loadData()>Load User Data</button>
             <button onclick=renderData()>Display User</button>
+           
         </div>
         <div class="user-container"></div>
         <div class="quote-container"></div>
@@ -35,22 +36,22 @@
     <script id="user-template" type="text/x-handlebars-template">
         <div id = "profile-pic" style = "background-image: url({{picture.medium}})"></div>
         <div class="user-info">
-            <div>{{toProperCase name.first}} {{toProperCase name.last}}</div>
-            <div>{{toProperCase location.city}}, {{toProperCase location.state}}</div>
+            <div>{{name.first}} {{name.last}}</div>
+            <div>{{location.city}}, {{location.state}}</div>
         </div>
     </script>
     <!-- ----------------------------------------------------->
     <script id="user-friends-template" type="text/x-handlebars-template">
         <ul class="user-friends">
             {{#each friends}}
-            <li>{{toProperCase this.name.first}} {{toProperCase this.name.last}}</li> <br>
+            <li>{{name.first}} {{name.last}}</li> <br>
             {{/each}}
         </ul>
     </script>
     <!-- ---------------------------------------------------- -->
     <script id="pokemon-template" type="text/x-handlebars-template">
             <span id = "pokemon-image" style = "background-image: url({{sprites.front_default}})"></span>
-            <span id= "pokemon-text">Favorite Pokemon: {{toProperCase name}}</span>
+            <span id= "pokemon-text">Favorite Pokemon: {{name}}</span>
     </script>
     <!-- ------------------------------------------------------ -->
     <script id="meat-template" type="text/x-handlebars-template">
@@ -60,11 +61,11 @@
         </div>
     </script>
     <!-- ------------------------------------------------------ -->
-    <script id="quote-template" type="text/x-handlebars-template">
+    <!-- <script id="quote-template" type="text/x-handlebars-template">
         <p>Favorite quote:</p>
         <span><i>"{{quote}}"</i> <br>
             - {{author}}</span>
-    </script>
+    </script> -->
     <!-- ------------------------------------------------------ -->
     <script src="Renderer.js"></script>
     <script src="APIManager.js"></script>
